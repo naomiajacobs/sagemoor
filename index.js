@@ -103,7 +103,14 @@ const c6 = 'c6';
 const c7 = 'c7';
 const c8 = 'c8';
 
-function insertGrid(colorGrid) {
+const colorGrid = [
+  [c1, c2, c1, c2],
+  [c3, c4, c5, c6],
+  [c7, c7, c8, c8]
+];
+
+function renderGrid() {
+  document.getElementById("colorGrid").innerHTML = "";
   const rows = []
   for (const row of colorGrid) {
     const rowEl = document.createElement('span')
@@ -112,7 +119,6 @@ function insertGrid(colorGrid) {
       const pixelEl = document.createElement('span');
       pixelEl.className = 'pixel';
       const colorName = $(`#${pixel} option:selected`).val();
-      console.log(colorName)
       pixelEl.setAttribute('style', `background-color:${colorMap[colorName]}`)
       rowEl.append(pixelEl);
     }
@@ -134,7 +140,9 @@ function insertSelect(name, colors) {
         ${colors.map((color) => createOption(color))}
       </select>
     </div>`
+
   $("#colorSelectors").append(html);
+  $(`#${name}`).on('change', renderGrid);
 }
 
 function insertColorImages(colors) {
@@ -149,18 +157,12 @@ function insertColorImages(colors) {
 }
 
 $(document).ready(() => {
-  console.log('hi');
+  document.title = "Sagemoor Color Explorer"
   insertColorImages(colorNames);
 
   [c1, c2, c3, c4, c5, c6, c7 ,c8].forEach((c) => {
     insertSelect(c, colorNames);
-  })
+  });
 
-  const colorGrid = [
-    [c1, c2, c1, c2],
-    [c3, c4, c5, c6],
-    [c7, c7, c8, c8]
-  ];
-
-  insertGrid(colorGrid);
+  renderGrid();
 });
