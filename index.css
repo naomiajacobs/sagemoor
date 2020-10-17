@@ -1,0 +1,20 @@
+.pixel {
+    border: 1px black solid;
+    height: 10px;
+    width: 10px;
+}
+
+#colorGrid {
+    display: flex;
+    flex-direction: column;
+}
+
+.row {
+    display: flex;
+}
+
+.colorImage {
+    height: 50px;
+    width: 50px;
+    margin-left: 5px;
+}
