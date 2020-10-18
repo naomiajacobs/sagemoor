@@ -33,3 +33,20 @@ function getAverageColor(img) {
 //   return tempMap;
 // }, {});
 // console.log(colorMap);
+
+function rp(item, number) {
+  const arr = [];
+  for (var i = 0; i < number; i++) {
+    arr.push(item);
+  }
+  return arr;
+}
+
+const greenPattern = [
+  [...rp(c4, 24)],
+  [c7, ...rp(c4, 5), ...rp(c7, 3), ...rp(c4, 5), ...rp(c7, 3), ...rp(c4, 5), ...rp(c7, 2)],
+  [c7, ...rp(c4, 4), c7, ...rp(c4, 3), c7, ...rp(c4, 3), c7, ...rp(c4, 3), c7, ...rp(c4, 4), ...rp(c7, 2)],
+  [c7, ...rp(c4, 4), c7, c4, c7, c4, c7, ...rp(c4, 3), c7, c4, c7, c4, c7, ...rp(c4, 4), ...rp(c7, 2)],
+  [c8, ...rp(c7, 3), c8, c7, ...rp(c8, 3), c7, ...rp(c8, 3), c7, ...rp(c8, 3), c7, c8, ...rp(c7, 3), ...rp(c8, 2)],
+  [c8, ...rp(c3, 3), ...rp(c8, 2), ...rp(c3, 3), ...rp(c8, 2), c3, ...rp(c8, 2), ...rp(c3, 3), ...rp(c8, 2), ...rp(c3, 3), ...rp(c8, 2)]
+];
