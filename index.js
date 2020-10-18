@@ -18,7 +18,7 @@ const colorMap = {
   "Flannel": "#3c5e8e",
   "Foothills": "#aaa390",
   "Fossil": "#e6e2e1",
-  "Hayloft": "#a7762e",
+  "Hayloft": "#cb913c", //"#a7762e",
   "HomemadeJam": "#7c385e",
   "Iceberg": "#adc4d6",
   "LongJohns": "#77162b",
