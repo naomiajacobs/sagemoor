@@ -221,21 +221,23 @@ const purpleConfig = {
 function renderGrid(config) {
   document.getElementById(config.patternId).innerHTML = "";
   const rows = []
-  for (const row of config.pattern) {
-    const rowEl = document.createElement('span')
-    rowEl.className = 'row';
-    // render 3 times
-    for (let i = 0; i < 3; i++) {
-      for (const pixel of row) {
-        const pixelEl = document.createElement('span');
-        pixelEl.className = 'pixel';
-        const colorName = $(`#${config.colorSelector} #${pixel} option:selected`).val();
-        pixelEl.setAttribute('style', `background-color:${colorMap[colorName]}`)
-        // pixelEl.setAttribute('style', `background-image: url('./images/${colorName}.png')`)
-        rowEl.append(pixelEl);
+  for (let i = 0; i < 2; i++) {
+    for (const row of config.pattern) {
+      const rowEl = document.createElement('span')
+      rowEl.className = 'row';
+      // render 3 times
+      for (let i = 0; i < 3; i++) {
+        for (const pixel of row) {
+          const pixelEl = document.createElement('span');
+          pixelEl.className = `pixel ${pixel}`;
+          const colorName = $(`#${config.colorSelector} #${pixel} option:selected`).val();
+          pixelEl.setAttribute('style', `background-color:${colorMap[colorName]}`)
+          // pixelEl.setAttribute('style', `background-image: url('./images/${colorName}.png')`)
+          rowEl.append(pixelEl);
+        }
       }
+      rows.push(rowEl)
     }
-    rows.push(rowEl)
   }
   rows.forEach((row) => {
     $(`#${config.patternId}`).append(row);
