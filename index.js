@@ -18,7 +18,7 @@ const colorMap = {
   "Flannel": "#3c5e8e",
   "Foothills": "#aaa390",
   "Fossil": "#e6e2e1",
-  "Hayloft": "#cb913c", //"#a7762e",
+  "Hayloft": "#cb913c", // "#a7762e",
   "HomemadeJam": "#7c385e",
   "Iceberg": "#adc4d6",
   "LongJohns": "#77162b",
@@ -41,7 +41,7 @@ const colorMap = {
   "Tent": "#857c44",
   "Thistle": "#66366c",
   "TruffleHunt": "#645763",
-  "Woodsmoke": "#645763",
+  "Woodsmoke": "#c6bbbb", // "#645763",
   "WoolSocks": "#91423a",
   "Yellowstone": "#705430",
 }
